@@ -62,13 +62,13 @@ class RssTableViewController: UITableViewController {
     
     // MARK: - Private Methods
     private func loadSampleRss() {
-        let rss1 = RssInformation("Some RSS", "https://www.someaddress.com/address")
-        let rss2 = RssInformation("Another RSS", "https://www.someaddress.com/address")
-        let rss3 = RssInformation("New RSS", "https://www.someaddress.com/address")
-        let rss4 = RssInformation("And another one RSS", "https://www.someaddress.com/address")
-        let rss5 = RssInformation("Another new RSS", "https://www.someaddress.com/address")
-        let rss6 = RssInformation("RSS", "https://www.someaddress.com/address")
-        let rss7 = RssInformation("RSS", "https://www.someaddress.com/addresss")
+        let rss1 = RssInformation(title: "Some RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss2 = RssInformation(title: "Another RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss3 = RssInformation(title: "New RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss4 = RssInformation(title: "And another one RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss5 = RssInformation(title: "Another new RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss6 = RssInformation(title: "RSS", rssUrl: "https://www.someaddress.com/address")
+        let rss7 = RssInformation(title: "RSS", rssUrl: "https://www.someaddress.com/addresss")
         
         rssFeed += [rss1, rss2, rss3, rss4, rss5, rss6, rss7]
     }

@@ -15,7 +15,7 @@ class RssInformation {
     
     var imageUrl: String?
     
-    init(_ title: String?, _ rssUrl: String? ) {
+    init(title: String?, rssUrl: String? ) {
         self.title = title
         self.rssUrl = rssUrl
     }
