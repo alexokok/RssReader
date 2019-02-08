@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RssInfoViewCell: UITableViewCell {
+class RssTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var rssName: UILabel!
-    @IBOutlet weak var rssAddress: UILabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var rssImageView: UIImageView!
     
     override func awakeFromNib() {

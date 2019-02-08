@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import os.log
 
 class RssTableViewController: UITableViewController {
 
     // MARK: Properties
-    let cellIdentifier = "RssInfoViewCell"
+    let cellIdentifier = "RssTableViewCell"
     
     var rssFeed = [RssInformation]()
     
@@ -37,15 +38,14 @@ class RssTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RssInfoViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RssTableViewCell else {
             fatalError("The dequeued cell is not an instance of RssInfoViewCell.")
         }
         
         let rssItem = rssFeed[indexPath.row]
         
-        cell.rssName.text = rssItem.title
-        cell.rssAddress.text = rssItem.rssUrl
-        
+        cell.title.text = rssItem.title
+        cell.address.text = rssItem.rssUrl
         
         return cell
     }
@@ -57,8 +57,50 @@ class RssTableViewController: UITableViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
-     }
+     }rssAddress
      */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+         
+        case "AddItem":
+            os_log("Adding a new RSS.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let rssDetailViewController = segue.destination as? RssDetailsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedRssCell = sender as? RssTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedRssCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedRss = rssFeed[indexPath.row]
+            rssDetailViewController.rss = selectedRss
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
+    
+    //MARK: - Actions
+    @IBAction func unwindToRss(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? RssViewController, let newRss = sourceViewController.rss {
+            
+            let newIndexPath = IndexPath(row: rssFeed.count, section: 0)
+            
+            rssFeed.append(newRss)
+            
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     
     // MARK: - Private Methods
     private func loadSampleRss() {

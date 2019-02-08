@@ -14,10 +14,11 @@
 		02030410220BF8D0007C2CC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0203040E220BF8D0007C2CC3 /* LaunchScreen.storyboard */; };
 		0203041B220BF8D0007C2CC3 /* RssReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203041A220BF8D0007C2CC3 /* RssReaderTests.swift */; };
 		02030426220BF8D0007C2CC3 /* RssReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02030425220BF8D0007C2CC3 /* RssReaderUITests.swift */; };
-		02030436220C0A1B007C2CC3 /* RssInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02030435220C0A1B007C2CC3 /* RssInfoViewCell.swift */; };
+		02030436220C0A1B007C2CC3 /* RssITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02030435220C0A1B007C2CC3 /* RssITableViewCell.swift */; };
 		0203043A220C10EE007C2CC3 /* RssInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02030439220C10EE007C2CC3 /* RssInformation.swift */; };
 		0203043F220C1BA6007C2CC3 /* RssTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203043E220C1BA6007C2CC3 /* RssTableViewController.swift */; };
 		02086F57220C5BB700D9E060 /* UiViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02086F56220C5BB700D9E060 /* UiViewControllerExtensions.swift */; };
+		0232850F220DB763002BB483 /* RssDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232850E220DB763002BB483 /* RssDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		02030421220BF8D0007C2CC3 /* RssReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RssReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02030425220BF8D0007C2CC3 /* RssReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssReaderUITests.swift; sourceTree = "<group>"; };
 		02030427220BF8D0007C2CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02030435220C0A1B007C2CC3 /* RssInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssInfoViewCell.swift; sourceTree = "<group>"; };
+		02030435220C0A1B007C2CC3 /* RssITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssITableViewCell.swift; sourceTree = "<group>"; };
 		02030439220C10EE007C2CC3 /* RssInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssInformation.swift; sourceTree = "<group>"; };
 		0203043E220C1BA6007C2CC3 /* RssTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTableViewController.swift; sourceTree = "<group>"; };
 		02086F56220C5BB700D9E060 /* UiViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtensions.swift; sourceTree = "<group>"; };
+		0232850E220DB763002BB483 /* RssDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		02030438220C0E00007C2CC3 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				0232850D220DB73F002BB483 /* details */,
 				02086F55220C5B9100D9E060 /* common */,
 				02030440220C2DC6007C2CC3 /* rss */,
 				0203043B220C114E007C2CC3 /* feed */,
@@ -155,7 +158,7 @@
 		0203043B220C114E007C2CC3 /* feed */ = {
 			isa = PBXGroup;
 			children = (
-				02030435220C0A1B007C2CC3 /* RssInfoViewCell.swift */,
+				02030435220C0A1B007C2CC3 /* RssITableViewCell.swift */,
 				0203043E220C1BA6007C2CC3 /* RssTableViewController.swift */,
 			);
 			path = feed;
@@ -175,6 +178,14 @@
 				02086F56220C5BB700D9E060 /* UiViewControllerExtensions.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		0232850D220DB73F002BB483 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				0232850E220DB763002BB483 /* RssDetailsViewController.swift */,
+			);
+			path = details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,8 +323,9 @@
 				02030408220BF8CE007C2CC3 /* RssViewController.swift in Sources */,
 				0203043A220C10EE007C2CC3 /* RssInformation.swift in Sources */,
 				02030406220BF8CE007C2CC3 /* AppDelegate.swift in Sources */,
+				0232850F220DB763002BB483 /* RssDetailsViewController.swift in Sources */,
 				0203043F220C1BA6007C2CC3 /* RssTableViewController.swift in Sources */,
-				02030436220C0A1B007C2CC3 /* RssInfoViewCell.swift in Sources */,
+				02030436220C0A1B007C2CC3 /* RssITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
